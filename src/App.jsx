@@ -44,8 +44,8 @@ function App() {
       const username = result.value
       setPlayerName(username)
       setCurrentPlayer(username)
-      // const newSocket = new io("http://127.0.0.1:8000", {
-      const newSocket = new io("https://tic-tac-toe-web-socket-backend.onrender.com", {
+      const newSocket = new io("http://127.0.0.1:8000", {
+      // const newSocket = new io("https://tic-tac-toe-web-socket-backend.onrender.com", {
         autoConnect: true
       })
 
@@ -137,10 +137,10 @@ function App() {
           <div className='w-100 flex flex-col items-center'>
             {finishedState && winner !== "Draw" && <p className='text-2xl font-semibold text-center mt-4'>{winner === PlayerName ? "You" : winner} won the game</p>}
             {finishedState && winner === "Draw" && <p className='text-2xl font-semibold mt-4 text-center'>it's a Draw! game over</p>}
-            {finishedArray && winner &&
+            {/* {finishedArray && winner &&
               <button onClick={handleRematch} className='bg-[#e4ca56]  border-0 font-semibold text-xl text-black mt-3 py-1 px-2 w-fit rounded cursor-pointer'>Want a Rematch</button>
 
-            }
+            } */}
 
             {!finishedState && opponent && <p className='text-2xl font-semibold text-center mt-4'>You are playing against  {opponent} </p>}
           </div>
