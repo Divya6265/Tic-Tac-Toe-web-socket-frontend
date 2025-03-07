@@ -44,7 +44,8 @@ function App() {
       const username = result.value
       setPlayerName(username)
       setCurrentPlayer(username)
-      const newSocket = new io("http://127.0.0.1:8000", {
+      // const newSocket = new io("http://127.0.0.1:8000", {
+      const newSocket = new io("https://tic-tac-toe-web-socket-backend.onrender.com", {
         autoConnect: true
       })
 
