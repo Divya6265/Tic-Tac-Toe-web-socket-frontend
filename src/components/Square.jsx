@@ -79,6 +79,12 @@ function Square({
     })
 
 
+
+    socket?.on("reset_game", (data) => {
+        if (data.responce) {
+         setIcon(null)
+        }
+      })
     const handleIcon = () => {
         if (!finishedState && !icon && currentPlayer==PlayerName) {
             setMoves(moves+1)
