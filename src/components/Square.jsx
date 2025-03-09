@@ -63,7 +63,6 @@ function Square({
     }, [gameState])
 
     socket?.on("playerMoveFromServer", (data) => {
-        console.log(data, "from server")
         setGameState(prevState => (
             prevState.map((arr, row) =>
                 arr.map((e, col) => {
@@ -85,6 +84,7 @@ function Square({
          setIcon(null)
         }
       })
+
     const handleIcon = () => {
         if (!finishedState && !icon && currentPlayer==PlayerName) {
             setMoves(moves+1)
