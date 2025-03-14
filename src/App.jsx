@@ -134,19 +134,17 @@ function App() {
       {!playOnline &&
         <div className='flex justify-center items-center h-full'>
           <button onClick={handlePlay} className='bg-[#e4ca56]  border-0 font-semibold text-5xl text-black py-3 px-2 rounded cursor-pointer '>Play Online</button>
+        </div> &&  socket === null && (
+            <div className='flex justify-center items-center h-full'>
+              <div className="load-man"></div> {/* Loading icon */}
+              <p className='text-3xl font-semibold'>
+                Socket connection is yet to be established. Please wait. This is due to Vercel server priority. If possible, please download the code from GitHub and run it on your local machine.
+              </p>
+            </div>
+          )
 
-        </div>
       }
-      
-{!playOnline && socket === null && (
-    <div className='flex justify-center items-center h-full'>
-      <div className="load-man"></div> {/* Loading icon */}
-      <p className='text-3xl font-semibold'>
-        Socket connection is yet to be established. Please wait. This is due to Vercel server priority. If possible, please download the code from GitHub and run it on your local machine.
-      </p>
-    </div>
-  )
-}
+     
 
       {playOnline && opponent == null &&
         <div className='flex justify-center items-center h-full'>
