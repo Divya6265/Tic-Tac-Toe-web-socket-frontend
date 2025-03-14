@@ -131,9 +131,14 @@ function App() {
   return (
 
     <div className='bg-[#4b495f] text-white w-full h-screen '>
+      {!playOnline &&
+        <div className='flex justify-center items-center h-full'>
+          <button onClick={handlePlay} className='bg-[#e4ca56]  border-0 font-semibold text-5xl text-black py-3 px-2 rounded cursor-pointer '>Play Online</button>
 
-{
-  playOnline && socket === null && (
+        </div>
+      }
+      
+{!playOnline && socket === null && (
     <div className='flex justify-center items-center h-full'>
       <div className="load-man"></div> {/* Loading icon */}
       <p className='text-3xl font-semibold'>
@@ -142,12 +147,7 @@ function App() {
     </div>
   )
 }
-      {!playOnline &&
-        <div className='flex justify-center items-center h-full'>
-          <button onClick={handlePlay} className='bg-[#e4ca56]  border-0 font-semibold text-5xl text-black py-3 px-2 rounded cursor-pointer '>Play Online</button>
 
-        </div>
-      }
       {playOnline && opponent == null &&
         <div className='flex justify-center items-center h-full'>
           <p className='text-4xl font-semibold'>waiting for opponent....</p>
