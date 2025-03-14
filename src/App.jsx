@@ -133,7 +133,7 @@ function App() {
   return (
 
     <div className='bg-[#4b495f] text-white w-full h-screen '>
-      {!playOnline && issocketConnected &&
+      {!playOnline &&
         <div className='flex justify-center items-center h-full'>
           <button onClick={handlePlay} className='bg-[#e4ca56]  border-0 font-semibold text-5xl text-black py-3 px-2 rounded cursor-pointer '>Play Online</button>
         </div>
