@@ -97,8 +97,8 @@ function App() {
       const username = result.value
       setPlayerName(username)
       setCurrentPlayer(username)
-      // const newSocket = new io("http://127.0.0.1:8000", {
-        const newSocket = new io("https://tic-tac-toe-web-socket-backend.onrender.com", {
+      const newSocket = new io("http://127.0.0.1:8000", {
+        // const newSocket = new io("https://tic-tac-toe-web-socket-backend.onrender.com", {
         autoConnect: true
       })
 
@@ -132,7 +132,16 @@ function App() {
 
     <div className='bg-[#4b495f] text-white w-full h-screen '>
 
-
+{
+  playOnline && socket === null && (
+    <div className='flex justify-center items-center h-full'>
+      <div className="load-man"></div> {/* Loading icon */}
+      <p className='text-3xl font-semibold'>
+        Socket connection is yet to be established. Please wait. This is due to Vercel server priority. If possible, please download the code from GitHub and run it on your local machine.
+      </p>
+    </div>
+  )
+}
       {!playOnline &&
         <div className='flex justify-center items-center h-full'>
           <button onClick={handlePlay} className='bg-[#e4ca56]  border-0 font-semibold text-5xl text-black py-3 px-2 rounded cursor-pointer '>Play Online</button>
